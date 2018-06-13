@@ -11,7 +11,7 @@ class Topic extends React.Component {
   render() {
   return(
     <div>
-      <h1>Here are the articles by topic</h1>
+      <h1>{`Here are all the ${this.props.match.params.topic} articles`}</h1>
       {this.state.articles.map(article =>  <Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link>)}
     </div>
   )
@@ -28,7 +28,6 @@ componentDidUpdate = async(prevProps) => {
 }
 
 fetchArticlesbyTopic = async query => {
-  console.log(this.props.match, 'MATCH')
   const {data} = await axios.get(`https://northcoders-news-kirstiecodes.herokuapp.com/api/topics/${this.props.match.params.topic}/articles`)
   return data;
 }
