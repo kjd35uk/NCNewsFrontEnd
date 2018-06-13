@@ -1,12 +1,14 @@
 import React from 'react';
 import Vote from '../Vote'
 
-const SingleComment = () => {
+const SingleComment = ({comment}) => {
   return(
     <div>
-    <p>This is a single comment from SingleComment</p>
-    <p>Vote button here from Vote.js</p>
-    <Vote />
+      <p>{comment.body}</p>
+      <p>votes: {comment.votes}</p>
+      <p>created by: {comment.created_by.username}</p>
+    <Vote {...this.props} id={comment._id}/>
+    
     </div>
   )
 }

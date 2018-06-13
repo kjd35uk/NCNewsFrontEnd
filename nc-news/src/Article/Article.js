@@ -14,8 +14,6 @@ class Article extends React.Component {
   render() {
   return (
     <div>
-      This is the individual article page from Article.js
-
       <Heading />
       <ArticleHeader article={this.state.article}/>
       <ArticleDisplay article={this.state.article}/>
@@ -35,7 +33,7 @@ componentDidUpdate = async(prevProps) => {
   }
 }
 
-fetchArticlebyId = async query => {
+fetchArticlebyId = async () => {
   const {data} = await axios.get(`https://northcoders-news-kirstiecodes.herokuapp.com/api/articles/${this.props.match.params.article_id}`)
   return data;
 }

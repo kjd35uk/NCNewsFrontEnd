@@ -4,7 +4,7 @@ const ArticleHeader = ({article}) => {
   if(article.created_by) {
   return (
     <div>
-      <h4>{article.title}</h4>
+      <h2>{article.title}</h2>
       <p>created by: {article.created_by.username}</p>
       <p>votes: {article.votes}</p>
       <p />
