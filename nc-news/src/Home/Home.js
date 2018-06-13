@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import Heading from '../Heading';
 import ArticleHeader from '../Article/ArticleHeader';
-import { Route, Link } from 'react-router-dom';
-import articleList from '../data/articleList';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Home extends Component {
@@ -13,6 +12,7 @@ class Home extends Component {
 
   componentDidMount = async () => {
     const {articles} = await this.fetchArticles()
+    console.log(articles)
     this.setState({ articles })
   }
 
@@ -21,7 +21,6 @@ class Home extends Component {
       <div className="Home">
         <Heading />   
         {this.state.articles.map(article =>  <Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link>)}
-        {/* {this.state.articles.map(article => <div><h3>{article.title}</h3><p>{article.body}</p></div>)} */}
 
       </div>
     );

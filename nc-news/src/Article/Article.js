@@ -18,8 +18,8 @@ class Article extends React.Component {
 
       <Heading />
       <ArticleHeader article={this.state.article}/>
-      <ArticleDisplay/>
-      <Comments/>
+      <ArticleDisplay article={this.state.article}/>
+      <Comments {...this.props} article={this.state.article}/>
     </div>
   )
 }

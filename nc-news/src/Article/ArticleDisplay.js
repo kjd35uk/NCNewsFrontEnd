@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 
-
-const ArticleDisplay = () => {
+const ArticleDisplay = ({ article }) => {
   return (
-    <h3>Here is the individual article text from ArticleDisplay</h3>
-  )
-}
+    <div>
+      <p>{article.body}</p>
+    </div>
+  );
+};
 
 export default ArticleDisplay;
