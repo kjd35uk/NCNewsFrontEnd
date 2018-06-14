@@ -5,7 +5,7 @@ import Comments from '../Comments/Comments';
 import ArticleHeader from './ArticleHeader';
 import axios from 'axios';
 import Vote from '../Vote';
-import * as api from '../api';
+// import * as api from '../api';
 
 
 
@@ -44,7 +44,6 @@ fetchArticlebyId = async () => {
 
 vote = async query => {
   const {data:{article}} = await axios.put(`https://northcoders-news-kirstiecodes.herokuapp.com/api/articles/${this.state.article._id}?vote=${query}`)
-  console.log(article, 'ARTICLE HERE')
   this.setState({
     article
   })

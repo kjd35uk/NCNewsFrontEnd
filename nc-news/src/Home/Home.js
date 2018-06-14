@@ -12,7 +12,6 @@ class Home extends Component {
 
   componentDidMount = async () => {
     const {articles} = await this.fetchArticles()
-    console.log(articles)
     this.setState({ articles })
   }
 

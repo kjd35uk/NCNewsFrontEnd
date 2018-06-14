@@ -8,7 +8,6 @@ class SingleComment extends React.Component {
     comment: this.props.comment
   }
   render() {
-    console.log('RENDER')
 const {comment} = this.state
   return(
     <div>
