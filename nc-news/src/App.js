@@ -8,6 +8,7 @@ import Topic from './Topic/Topic';
 class App extends React.Component {
 render() {
   return (
+    <div>
     <nav>
     <Link to="/">
     <button>Home</button>
@@ -21,13 +22,12 @@ render() {
   <Link to="/topics/coding">
     <button>Coding</button>
   </Link> 
-  
+  </nav>
   <Route exact path="/" component={Home}/>
   <Route path="/articles/:article_id" component={Article} />
   <Route path="/topics/:topic" component={Topic} />
- 
 
-  </nav>
+  </div>
   )
 }
 

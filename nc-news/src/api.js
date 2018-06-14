@@ -2,14 +2,19 @@ import axios from 'axios';
 
 const url = "https://northcoders-news-kirstiecodes.herokuapp.com/api";
 
-// export const fetchArticles = () => {
-//   return axios.get(`${url}/articles`)
-//   .then (res => res.data.articles);
-// }
 
-export const fetchArticlebyId = (id) => {
-  return axios.get(`${url}/articles/${id}`)
-  .then (res => {
-    return res.data;
-  })
+export const fetchArticlebyId = async (id) => {
+  const {data} = await axios.get(`${url}/articles/${id}`)
+  return data;
 }
+
+export const fetchArticles = async query => {
+  const {data} = await axios.get(`${url}/articles`)
+  return data;
+}
+
+export const vote = async (id, query) => {
+  const{data} = await axios.put(`${url}/articles/${id}?vote=${query}`)
+  return data;
+}
+

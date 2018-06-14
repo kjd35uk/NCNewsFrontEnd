@@ -12,7 +12,7 @@ class Topic extends React.Component {
   return(
     <div>
       <h1>{`Here are all the ${this.props.match.params.topic} articles`}</h1>
-      {this.state.articles.map(article =>  <Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link>)}
+      {this.state.articles.map(article =>  <div key={article._id}><Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link></div>)}
     </div>
   )
 }

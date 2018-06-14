@@ -26,28 +26,28 @@ class Article extends React.Component {
   )
 }
 componentDidMount = async () => {
-  const {article} = await this.fetchArticlebyId()
+  const {article} = await api.fetchArticlebyId(this.props.match.params.article_id)
   this.setState({ article })
 }
+
 
 componentDidUpdate = async(prevProps) => {
   if(prevProps.article_id !== this.props.article_id) {
-  const {article} = await this.fetchArticlebyId()
-  this.setState({ article })
+    const {article} = await api.fetchArticlebyId(this.props.match.params.article_id)
+    this.setState({ article })
   }
 }
 
-fetchArticlebyId = async () => {
-  const {data} = await axios.get(`https://northcoders-news-kirstiecodes.herokuapp.com/api/articles/${this.props.match.params.article_id}`)
-  return data;
-}
-
 vote = async query => {
-  const {data:{article}} = await axios.put(`https://northcoders-news-kirstiecodes.herokuapp.com/api/articles/${this.state.article._id}?vote=${query}`)
+  const {article} = this.state;
+  api.vote(article._id, query ? 'up' : 'down')
   this.setState({
-    article
+    article: {
+      ...article, 
+      votes: query === 'up' ? article.votes + 1 : article.votes - 1
+    }
   })
-
+  
 }
 }
 

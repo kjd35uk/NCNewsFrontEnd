@@ -3,7 +3,8 @@ import '../App.css';
 import Heading from '../Heading';
 import ArticleHeader from '../Article/ArticleHeader';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import * as api from '../api';
+
 
 class Home extends Component {
   state = {
@@ -11,7 +12,7 @@ class Home extends Component {
   }
 
   componentDidMount = async () => {
-    const {articles} = await this.fetchArticles()
+    const {articles} = await api.fetchArticles()
     this.setState({ articles })
   }
 
@@ -24,10 +25,7 @@ class Home extends Component {
       </div>
     );
   }
-  fetchArticles = async query => {
-    const {data} = await axios.get(`https://northcoders-news-kirstiecodes.herokuapp.com/api/articles`)
-    return data;
-  }
+
 }
 
 export default Home;
