@@ -1,6 +1,7 @@
 import React from 'react';
 import Vote from '../Vote';
-import axios from 'axios';
+import * as api from '../api';
+
 
 
 class SingleComment extends React.Component {
@@ -15,17 +16,20 @@ const {comment} = this.state
       <p>votes: {comment.votes}</p>
       <p>created by: {comment.created_by.username}</p>
     <Vote {...this.props} vote={this.vote} id={comment._id}/>
-    
+    <button onClick = {this.props.deleteComment} >Delete</button>
     </div>
   )
 }
-vote = async query => {
- 
-  const {data:{comment}} = await axios.put(`https://northcoders-news-kirstiecodes.herokuapp.com/api/comments/${this.props.comment._id}?vote=${query}`)
-  this.setState({
-    comment
-  })
 
+vote = async query => {
+  const {comment} = this.state;
+  api.vote(comment._id, query ? 'up' : 'down')
+  this.setState({
+    comment: {
+      ...comment, 
+      votes: query === 'up' ? comment.votes + 1 : comment.votes - 1
+    }
+  })
 }
 
 }

@@ -17,10 +17,12 @@ class Home extends Component {
   }
 
   render() {
+    const articles = [...this.state.articles]
+
     return (
       <div className="Home">
         <Heading />   
-        {this.state.articles.sort((a, b) => b.votes - a.votes).map(article =>  <div key={article._id}><Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link></div>)}
+        {articles.sort((a, b) => b.votes - a.votes).map(article =>  <div key={article._id}><Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link></div>)}
 
       </div>
     );

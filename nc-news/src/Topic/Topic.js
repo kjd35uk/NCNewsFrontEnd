@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ArticleHeader from '../Article/ArticleHeader';
+import * as api from '../api';
 
 
 class Topic extends React.Component {
@@ -17,21 +17,15 @@ class Topic extends React.Component {
   )
 }
 componentDidMount = async () => {
-  const {articles} = await this.fetchArticlesbyTopic()
+  const {articles} = await api.fetchArticlesbyTopic(this.props.match.params.topic)
   this.setState({ articles })
 }
 componentDidUpdate = async(prevProps) => {
   if(prevProps !== this.props) {
-  const {articles} = await this.fetchArticlesbyTopic()
+  const {articles} = await api.fetchArticlesbyTopic(this.props.match.params.topic)
   this.setState({ articles })
   }
 }
-
-fetchArticlesbyTopic = async query => {
-  const {data} = await axios.get(`https://northcoders-news-kirstiecodes.herokuapp.com/api/topics/${this.props.match.params.topic}/articles`)
-  return data;
-}
-
 
 }
 

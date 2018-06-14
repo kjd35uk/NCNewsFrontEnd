@@ -18,3 +18,27 @@ export const vote = async (id, query) => {
   return data;
 }
 
+export const fetchCommentsbyArticleId = async id => {
+  const { data } = await axios.get(
+    `${url}/articles/${id}/comments`
+  );
+  return data;
+}
+
+ export const postComment = async (text, id) => {
+  if(text) {
+  const { data } = await axios.post(`${url}/articles/${id}/comments`, ({comment: text}));
+  return data;
+  }
+}
+
+export const deleteComment = async (id) => {
+  const { data } = await axios.delete(`${url}/comments/${id}/`);
+  return data;
+
+}
+
+export const fetchArticlesbyTopic = async topic => {
+  const {data} = await axios.get(`${url}/topics/${topic}/articles`)
+  return data;
+}
