@@ -37,10 +37,11 @@ class Comments extends React.Component {
     const {data} = await axios.get(`https://northcoders-news-kirstiecodes.herokuapp.com/api/articles/${this.props.match.params.article_id}/comments`)
     return data;
   }
-  vote = async query => {
-    const {data} = await axios.put(`http://northcoders-news-api.herokuapp.com/api/comments/${this.props.id}?vote=${query}`)
-    return data;
-  }
+
+  // vote = async query => {
+  //   const {data} = await axios.put(`http://northcoders-news-api.herokuapp.com/api/comments/${this.props.id}?vote=${query}`)
+  //   return data;
+  // }
 }
 
 export default Comments;

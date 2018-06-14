@@ -1,16 +1,34 @@
 import React from 'react';
-import Vote from '../Vote'
+import Vote from '../Vote';
+import axios from 'axios';
 
-const SingleComment = ({comment}) => {
+
+class SingleComment extends React.Component {
+  state = {
+    comment: this.props.comment
+  }
+  render() {
+    console.log('RENDER')
+const {comment} = this.state
   return(
     <div>
       <p>{comment.body}</p>
       <p>votes: {comment.votes}</p>
       <p>created by: {comment.created_by.username}</p>
-    <Vote {...this.props} id={comment._id}/>
+    <Vote {...this.props} vote={this.vote} id={comment._id}/>
     
     </div>
   )
+}
+vote = async query => {
+ 
+  const {data:{comment}} = await axios.put(`https://northcoders-news-kirstiecodes.herokuapp.com/api/comments/${this.props.comment._id}?vote=${query}`)
+  this.setState({
+    comment
+  })
+
+}
+
 }
 
 export default SingleComment;

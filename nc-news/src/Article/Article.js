@@ -27,7 +27,7 @@ componentDidMount = async () => {
 }
 
 componentDidUpdate = async(prevProps) => {
-  if(prevProps !== this.props) {
+  if(prevProps.article_id !== this.props.article_id) {
   const {article} = await this.fetchArticlebyId()
   this.setState({ article })
   }
