@@ -5,7 +5,7 @@ import Comments from '../Comments/Comments';
 import ArticleHeader from './ArticleHeader';
 import axios from 'axios';
 import Vote from '../Vote';
-// import * as api from '../api';
+import * as api from '../api';
 
 
 

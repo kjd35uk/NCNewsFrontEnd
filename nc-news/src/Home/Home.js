@@ -19,7 +19,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <Heading />   
-        {this.state.articles.map(article =>  <Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link>)}
+        {this.state.articles.sort((a, b) => b.votes - a.votes).map(article =>  <div key={article._id}><Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link></div>)}
 
       </div>
     );
