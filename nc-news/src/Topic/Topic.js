@@ -6,19 +6,23 @@ import Heading from "../Heading";
 
 class Topic extends React.Component {
   state = {
-    articles: []
+    articles: [],
+    title:'',
+    body: ''
   };
   render() {
-    const articles = [...this.state.articles];
 
     return (
       <div>
         <Heading />
         <h1 className="Topic-header">{`You are browsing ${
           this.props.match.params.topic
-        } articles`}</h1>
+        } articles`} <form>
+          <input placeholder='Enter article title' value={this.state.title} onChange={(event) => this.handleChange(event, 'title')} type="text" className='input'/>
+          <input placeholder='Enter article content' value={this.state.body} onChange={(event) => this.handleChange(event, 'body')} type="text" className='input'/>
+          <button onClick={this.handleSubmit} className='button'>Create an article</button></form></h1>
         <div className="article-container">
-          {articles.sort((a, b) => b.votes - a.votes).map(article => (
+          {this.state.articles.map(article => (
             <div className="article" key={article._id}>
               <Link to={`/articles/${article._id}`}>
                 <ArticleHeader article={article} />
@@ -34,7 +38,8 @@ class Topic extends React.Component {
     try {
       const { articles } = await api.fetchArticlesbyTopic(
         this.props.match.params.topic
-      );
+      )
+      articles.sort((a, b) => b.votes - a.votes);
       this.setState({ articles });
     } catch (err) {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
@@ -48,6 +53,8 @@ class Topic extends React.Component {
         const { articles } = await api.fetchArticlesbyTopic(
           this.props.match.params.topic
         );
+        articles.sort((a, b) => b.votes - a.votes);
+
         this.setState({ articles });
       } catch (err) {
         if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
@@ -55,6 +62,39 @@ class Topic extends React.Component {
       }
     }
   };
+
+  postArticle = async (title, body) => {
+    if (title && body) {
+      try {
+        const data = await api.postArticle(
+          title,
+          body,
+          this.props.match.params.topic
+        );
+        const article = {...data.article, created_by: {username:'tickle122'}}
+        console.log(article)
+        this.setState({ articles: [article, ...this.state.articles] , body: '', title: ''});
+      } catch (err) {
+        console.log(err, 'ERROR')
+        if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
+        else this.props.history.push("500");
+      }
+    }
+  };
+
+  handleChange = (event, targetState) => {
+    event.preventDefault();
+    const newVal = event.target.value;
+    this.setState ({
+      [targetState]: newVal
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.postArticle(this.state.title, this.state.body)
+  }
 }
+
 
 export default Topic;

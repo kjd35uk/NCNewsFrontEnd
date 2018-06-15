@@ -42,3 +42,11 @@ export const fetchArticlesbyTopic = async topic => {
   const {data} = await axios.get(`${url}/topics/${topic}/articles`)
   return data;
 }
+
+export const postArticle = async (title, body, topic) => {
+  if(title && body) {
+  const { data } = await axios.post(`${url}/topics/${topic}/articles`, ({'title': title, 'body': body}))
+  return data;
+  }
+  // needs { "title": "this is my new article title", "body": "This is my new article content"}
+}

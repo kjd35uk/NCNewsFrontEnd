@@ -33,8 +33,8 @@ render() {
   <Route path="/articles/:article_id" component={Article} />
   </Switch>
   <Switch>
-  <Route exact path="/topics/404" component={Error404} />
-  <Route exact path="/topics/500" component={Error500} />
+  <Route exact path="/topics/:topic/404" component={Error404} />
+  <Route exact path="/topics/:topic/500" component={Error500} />
   <Route path="/topics/:topic" component={Topic} />
   </Switch>
 
