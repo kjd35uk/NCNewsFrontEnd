@@ -27,6 +27,20 @@ a:active {
   justify-content: space-around;
 }
 
+.article-container-single{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: justify;
+  border: 2px solid darkslateblue;
+  border-style: ridge;
+  width:93%;
+  margin: 1%;
+  border-radius: 3rem;
+  padding: 2rem;
+  background-color:  rgba(71, 61, 139, 0.089)
+}
+
 .App {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
@@ -66,10 +80,65 @@ a:active {
   border-radius: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color:  rgba(71, 61, 139, 0.089)
 }
 
 .article-header{
   text-align: center;
+}
+
+.button{
+  color:darkslateblue;
+  font-size: 1rem;
+  border: 2px solid darkslateblue;
+  border-style: ridge;
+  border-radius: 3rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.button-image{
+  width: 1.2em;
+  height: 1em;
+}
+
+.comment-container{
+display:flex;
+flex-direction: row;
+border: 2px solid darkslateblue;
+border-style: ridge;
+widows: 95%;
+margin: 1%;
+border-radius: 3rem;
+padding: 1rem;
+background-color:  rgba(34, 114, 110, 0.205);
+}
+
+.comment-body{
+order:2;
+padding-left: 2rem;
+}
+
+.comment-buttons-container{
+display:flex;
+flex-direction: column;
+justify-content: space-between;
+order: 1;
+flex-wrap: no-wrap;
+}
+
+.comment-vote{
+  color:red
+}
+
+.input{
+  color:darkslateblue;
+  font-size: 1rem;
+  border: 2px solid darkslateblue;
+  border-style: ridge;
+  border-radius: 3rem;
+  padding: 0.5rem;
+  outline: none;
 }
 
 .logo{
@@ -102,4 +171,12 @@ a:active {
 
 ul{
   list-style-type: none;
+}
+
+.vote-container{
+display:flex;
+flex-direction: column;
+flex-wrap: no-wrap;
+justify-content: space-between;
+
 }

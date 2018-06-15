@@ -6,8 +6,8 @@ render() {
 
 return(
   <div>
-    <button onClick={() => this.props.vote('up')}>Upvote here</button>
-    <button onClick={() => this.props.vote('down')}>Downvote here</button>
+    <button className='button' onClick={() => this.props.vote('up')}><img className='button-image' src={require('./plus.png')}/></button>
+    <button className='button' onClick={() => this.props.vote('down')}><img className='button-image' src={require('./minus.png')}/></button>
 
     </div>
 )

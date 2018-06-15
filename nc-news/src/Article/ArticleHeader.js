@@ -9,8 +9,8 @@ const ArticleHeader = ({article}) => {
       <h2>{article.title}</h2>
       <ul>
       <li>created by: {article.created_by.username}</li>
-      <li>submitted: {moment(article.created_at).fromNow()}</li>
       <br/>
+      <li>submitted: {moment(article.created_at).fromNow()}</li>
       <li>votes: {article.votes}</li>
 
       </ul>

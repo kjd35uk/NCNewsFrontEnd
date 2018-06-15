@@ -8,8 +8,8 @@ class CommentBox extends React.Component {
 
   render() {
     return (
-    <div><input onChange={this.handleChange} type="text" value={this.state.value} />
-        <button onClick={this.handleSubmit}>Post comment!</button>
+    <div><input className='input' onChange={this.handleChange} type="text" value={this.state.value} />
+        <button className='button' onClick={this.handleSubmit}>Join the discussion!</button>
         </div>)
   }
 

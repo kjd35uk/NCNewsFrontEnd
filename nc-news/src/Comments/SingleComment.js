@@ -12,13 +12,17 @@ class SingleComment extends React.Component {
   render() {
 const {comment} = this.state
   return(
-    <div>
+    <div className='comment-container'>
+    <div className='comment-body'>
       <p>{comment.body}</p>
       <p>votes: {comment.votes}</p>
       <p>created by: {comment.created_by.username}</p>
       <p>submitted: {moment(comment.created_at).fromNow()}</p>
-    <Vote {...this.props} vote={this.vote} id={comment._id}/>
-    {comment.created_by.username==='tickle122' && (<button onClick = {this.props.deleteComment} >Delete</button>)}
+      </div>
+      <div className='comment-buttons-container'>
+    <Vote className='comment-vote' {...this.props} vote={this.vote} id={comment._id}/>
+    {comment.created_by.username==='tickle122' && (<button className='button' onClick = {this.props.deleteComment} >D</button>)}
+    </div>
     </div>
   )
 }
