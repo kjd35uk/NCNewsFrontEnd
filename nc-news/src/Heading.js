@@ -4,7 +4,7 @@ import React from 'react';
 const Heading = () => {
   return(
     <header className="App-header">
-          <h1 className="App-title">Welcome to Northcoders News!</h1>
+          <span><img className='logo' src={require('./logo.png')}/><h1 className="App-title">NC News</h1></span>
         </header>
   )
 }

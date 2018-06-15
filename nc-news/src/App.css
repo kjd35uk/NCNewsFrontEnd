@@ -1,16 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Source+Code+Pro');
+
+
 .App {
   text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: darkslateblue ;
   height: 150px;
   padding: 20px;
   color: white;
+  font-size: 1.5em;
+  text-align: left;
+  
+
 }
 
 .App-title {
   font-size: 1.5em;
+  color: white;
+  display:inline-flex;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Source Code Pro', monospace;  
+  margin: 0;
+  text-align: center;
+  /* margin-left: 30%; */
 }
 
 .App-intro {
@@ -18,7 +34,44 @@
 }
 
 .nav {
-  font-size: large;
+  font-size: 1.3em;
+  color: whitesmoke;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Source Code Pro', monospace;  
+  background-color: black;
+  border: none;
+  padding-left: 0.5em;
+}
+
+.logo{
+  width: 10em;
+  height: 5em;
+  display: inline-flex;
+}
+
+.article-header{
+  text-align: center;
+}
+
+/* unvisited link */
+a:link {
+  color: green;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
 }
 
 /* @keyframes App-logo-spin {

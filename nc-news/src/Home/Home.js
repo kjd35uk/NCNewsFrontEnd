@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../App.css';
 import Heading from '../Heading';
 import ArticleHeader from '../Article/ArticleHeader';
 import { Link } from 'react-router-dom';
@@ -20,7 +19,7 @@ class Home extends Component {
     const articles = [...this.state.articles]
 
     return (
-      <div className="Home">
+      <div className="App">
         <Heading />   
         {articles.sort((a, b) => b.votes - a.votes).map(article =>  <div key={article._id}><Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link></div>)}
 

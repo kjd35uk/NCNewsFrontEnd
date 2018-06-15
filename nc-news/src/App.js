@@ -3,24 +3,25 @@ import { Route, Link } from 'react-router-dom';
 import Home from './Home/Home';
 import Article from './Article/Article';
 import Topic from './Topic/Topic';
+import './App.css'
 
 
 class App extends React.Component {
 render() {
   return (
     <div>
-    <nav>
+    <nav className = 'nav'>
     <Link to="/">
-    <button>Home</button>
+    <button className='nav'>Home</button>
   </Link>        
   <Link to="/topics/cooking">
-    <button>Cooking</button>
+    <button className='nav'>Cooking</button>
   </Link> 
   <Link to="/topics/football">
-    <button>Football</button>
+    <button className='nav'>Football</button>
   </Link> 
   <Link to="/topics/coding">
-    <button>Coding</button>
+    <button className='nav'>Coding</button>
   </Link> 
   </nav>
   <Route exact path="/" component={Home}/>

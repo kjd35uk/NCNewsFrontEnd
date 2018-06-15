@@ -1,6 +1,7 @@
 import React from 'react';
 import Vote from '../Vote';
 import * as api from '../api';
+import moment from 'moment';
 
 
 
@@ -15,8 +16,9 @@ const {comment} = this.state
       <p>{comment.body}</p>
       <p>votes: {comment.votes}</p>
       <p>created by: {comment.created_by.username}</p>
+      <p>submitted: {moment(comment.created_at).fromNow()}</p>
     <Vote {...this.props} vote={this.vote} id={comment._id}/>
-    <button onClick = {this.props.deleteComment} >Delete</button>
+    {comment.created_by.username==='tickle122' && (<button onClick = {this.props.deleteComment} >Delete</button>)}
     </div>
   )
 }

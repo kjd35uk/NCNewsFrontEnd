@@ -32,8 +32,6 @@ class Comments extends React.Component {
   }
 
   componentDidUpdate = async prevProps => {
-    console.log('calling CDU')
-
     if (prevProps.match.params.article_id !== this.props.match.params.article_id) {
       const { comments } = await api.fetchCommentsbyArticleId(this.props.match.params.article_id);
       this.setState({ comments });
@@ -47,7 +45,7 @@ class Comments extends React.Component {
   };
   deleteComment = async (comment) => {
     if(comment.created_by.username === 'tickle122') {
-    const data = await api.deleteComment(comment._id)
+    await api.deleteComment(comment._id)
     const newComments = [...this.state.comments]
     const index = newComments.findIndex(queryComment => queryComment._id === comment._id)
     newComments.splice(index, 1)
