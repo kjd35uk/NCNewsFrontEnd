@@ -21,8 +21,9 @@ class Home extends Component {
     return (
       <div className="App">
         <Heading />   
-        {articles.sort((a, b) => b.votes - a.votes).map(article =>  <div key={article._id}><Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link></div>)}
-
+        <div className='article-container'>
+        {articles.sort((a, b) => b.votes - a.votes).map(article =>  <div className='article'key={article._id}><Link to={`/articles/${article._id}`}><ArticleHeader article={article}/></Link></div>)}
+        </div>
       </div>
     );
   }
