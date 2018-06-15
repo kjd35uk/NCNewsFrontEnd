@@ -7,9 +7,13 @@ const ArticleHeader = ({article}) => {
   return (
     <div className='article-header' key={article._id}>
       <h2>{article.title}</h2>
-      <p>created by: {article.created_by.username}</p>
-      <p>votes: {article.votes}</p>
-      <p>submitted: {moment(article.created_at).fromNow()}</p>
+      <ul>
+      <li>created by: {article.created_by.username}</li>
+      <li>submitted: {moment(article.created_at).fromNow()}</li>
+      <br/>
+      <li>votes: {article.votes}</li>
+
+      </ul>
       </div>
   )
       } 
