@@ -30,7 +30,7 @@ class Comments extends React.Component {
       const { comments } = await api.fetchCommentsbyArticleId(
         this.props.match.params.article_id
       );
-      comments.sort((a, b) => b.created_at - a.created_at);
+      comments.sort((a, b) => b.votes - a.votes);
       this.setState({ comments });
     } catch (err) {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");

@@ -29,6 +29,7 @@ class Topic extends React.Component {
       </div>
     );
   }
+  
   componentDidMount = async () => {
     try {
       const { articles } = await api.fetchArticlesbyTopic(

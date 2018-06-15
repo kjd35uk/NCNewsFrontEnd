@@ -21,7 +21,7 @@ const {comment} = this.state
       </div>
       <div className='comment-buttons-container'>
     <Vote className='comment-vote' {...this.props} vote={this.vote} id={comment._id}/>
-    {comment.created_by.username==='tickle122' && (<button className='button' onClick = {this.props.deleteComment} >D</button>)}
+    {comment.created_by.username==='tickle122' && (<button className='button' onClick = {this.props.deleteComment} >Delete</button>)}
     </div>
     </div>
   )
