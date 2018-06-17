@@ -37,7 +37,6 @@ vote = async query => {
     }
   })
 }
-
 }
 
 export default SingleComment;

@@ -64,25 +64,6 @@ class Topic extends React.Component {
     }
   };
 
-  // postArticle = async (title, body) => {
-  //   if (title && body) {
-  //     try {
-  //       const data = await api.postArticle(
-  //         title,
-  //         body,
-  //         this.props.match.params.topic
-  //       );
-  //       const article = {...data.article, created_by: {username:'tickle122'}}
-  //       console.log(article, 'ARTICLE THAT WAS POSTED')
-  //       this.setState({ articles: [article, ...this.state.articles] , body: '', title: ''});
-  //     } catch (err) {
-  //       console.log(err, 'ERROR')
-  //       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
-  //       else this.props.history.push("500");
-  //     }
-  //   }
-  // };
-
   handleChange = (event, targetState) => {
     event.preventDefault();
     const newVal = event.target.value;
@@ -95,6 +76,7 @@ class Topic extends React.Component {
     event.preventDefault();
     this.postArticle(this.state.title, this.state.body)
   }
+  
 }
 
 

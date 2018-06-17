@@ -82,4 +82,5 @@ class CreateArticle extends React.Component {
     }
   };
 }
+
 export default CreateArticle;

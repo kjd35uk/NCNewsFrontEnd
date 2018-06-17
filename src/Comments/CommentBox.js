@@ -14,14 +14,13 @@ class CommentBox extends React.Component {
   }
 
   handleChange = (event) => {
-    // event.preventDefault();
     const newVal = event.target.value;
     this.setState ({
       value: newVal
     })
   }
+  
   handleSubmit = (event) => {
-    // event.preventDefault();
     this.props.postComment(this.state.value)
     this.setState ({
       value: ''

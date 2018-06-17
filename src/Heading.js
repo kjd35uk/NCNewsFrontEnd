@@ -5,9 +5,9 @@ const Heading = () => {
   return(
     <div>
     <header className="App-header">
-          {/*<img className='logo' src={require('./')}/>*/}<h1 className="App-title">Northcoders News</h1>
+        <h1 className="App-title">Northcoders News</h1>
         </header>
-        <h1 className='heading-bar'> *  </h1>
+        <h1 className='heading-bar'> * </h1>
         </div>
   )
 }
