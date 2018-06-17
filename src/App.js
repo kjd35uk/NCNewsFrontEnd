@@ -3,10 +3,9 @@ import {Switch, Route, Link } from 'react-router-dom';
 import Home from './Home/Home';
 import Article from './Article/Article';
 import Topic from './Topic/Topic';
-import TopicHolder from './Topic/TopicHolder'
-import CreateArticle from './Topic/CreateArticle'
-
-import './App.css'
+import TopicHolder from './Topic/TopicHolder';
+import CreateArticle from './Topic/CreateArticle';
+import './App.css';
 import Error404 from './Error404';
 import Error500 from './Error500';
 
@@ -35,7 +34,6 @@ render() {
   </nav>
   
   <Route exact path="/" component={Home}/>
-
 
   <Switch>
   <Route exact path="/articles/404" component={Error404} />

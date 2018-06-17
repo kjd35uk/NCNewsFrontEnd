@@ -48,5 +48,4 @@ export const postArticle = async (title, body, topic) => {
   const { data } = await axios.post(`${url}/topics/${topic}/articles`, ({'title': title, 'body': body}))
   return data;
   }
-  // needs { "title": "this is my new article title", "body": "This is my new article content"}
 }

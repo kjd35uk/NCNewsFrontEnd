@@ -3,7 +3,7 @@ import React from "react";
 const ArticleDisplay = ({ article }) => {
   return (
     <div>
-      <p>{article.body}</p>
+      <p className='article-p'>{article.body}</p>
     </div>
   );
 };

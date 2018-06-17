@@ -37,6 +37,11 @@ class Home extends Component {
       </div>
     );
   }
+  getArticlesByUser = (username) =>{
+const articles = [...this.state.articles]
+articles.filter(article => article.created_by.username === username)
+this.setState({articles})
+  }
 }
 
 export default Home;

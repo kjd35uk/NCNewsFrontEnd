@@ -10,7 +10,6 @@ class CreateArticle extends React.Component {
     message:""
   };
   render() {
-    console.log(this.props, "CA PROPS")
     return (
       <div>
       <Heading/>
@@ -56,8 +55,6 @@ class CreateArticle extends React.Component {
   }
 
   handleSubmit = (event) => {
-    console.log(event,'EVENT')
-    console.log(this.props.postArticle, 'PROPS')
     event.preventDefault();
     this.postArticle(this.state.title, this.state.body, this.props.match.params.topic)
     this.setState({
@@ -79,7 +76,6 @@ class CreateArticle extends React.Component {
         console.log(article, 'ARTICLE THAT WAS POSTED')
         this.setState({ message: 'Success'});
       } catch (err) {
-        console.log(err, 'ERROR')
         if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
         else this.props.history.push("500");
       }

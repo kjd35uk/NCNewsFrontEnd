@@ -67,7 +67,7 @@ a:active {
 
  .article-container-single{
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   border: 2px solid darkslateblue;
   border-style: ridge;
   widows: 95%;
@@ -98,7 +98,9 @@ margin-top: 1rem;
 .article-header{
   text-align: center;
 }
-
+.article-p{
+  text-align: center;
+}
 .article-page{
   width: 100%;
 }
@@ -148,10 +150,11 @@ padding:1rem;
   text-align: left;
   border-bottom: 1em;
   margin: auto;
-  background-image: url('./news.jpg');
+  background-image: url('./sparkles.jpg');
   background-repeat: no-repeat;
     background-size: 100% 100%;
     text-align: center;
+    display:flex;
 }
 
 .App-title {
@@ -336,8 +339,13 @@ ul li{
 display:flex;
 flex-direction: column;
 justify-content: space-around;
-}
+text-align: center;
+align-items: center;
 
+}
+#vote-button{
+  max-width:3rem;
+}
 .vote-container{
 display:flex;
 flex-direction: column;
