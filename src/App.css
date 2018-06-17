@@ -45,12 +45,99 @@ a:active {
   background-color:  rgba(71, 61, 139, 0.089)
 }
 
+.article-form{
+  /* display: grid; */
+  /* flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+
+
+.article{
+  border: 2px solid darkslateblue;
+  border-style: ridge;
+  width:44.9%;
+  margin: 1%;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color:  rgba(71, 61, 139, 0.089)
+}
+
+ .article-container-single{
+  display:flex;
+  flex-direction: row;
+  border: 2px solid darkslateblue;
+  border-style: ridge;
+  widows: 95%;
+  margin: 1%;
+  border-radius: 1.5rem;
+  padding: 1rem;
+    margin-top: 1rem;
+    margin:auto;
+ }
+ #article-create-button{
+font-size: 1.5rem;
+margin-bottom: 1rem;
+margin-top: 1rem;
+ }
+
+ .article-form{
+   display:grid;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .article-form-span{
+   font-size: x-large;
+   display:flex;
+
+ }
+
+.article-header{
+  text-align: center;
+}
+
+.article-page{
+  width: 100%;
+}
+
+#article-page-create-button{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  max-width:21%;
+margin-right: auto;
+margin-left: auto;
+}
+
+#article-title-input{
+  min-width: 60%;
+  min-height: 2rem;
+  text-align: center;
+  font-size: large;
+  margin-left: 1.8rem;
+  text-align: left;
+  padding:1rem;
+
+}
+
+#article-body-input{
+min-width: 60%;
+min-height: 26rem;
+text-align: center;
+font-size: large;
+vertical-align: top;
+text-align: left;
+padding:1rem;
+}
+
 .App {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'Source Code Pro', monospace;
   min-width:408px;
-
 }
 
 .App-header {
@@ -65,7 +152,6 @@ a:active {
   background-repeat: no-repeat;
     background-size: 100% 100%;
     text-align: center;
-
 }
 
 .App-title {
@@ -75,47 +161,10 @@ a:active {
   letter-spacing: 7px;
   font-family: 'Special Elite', cursive;
   margin: auto;
-  
 }
 
 .App-intro {
   font-size: large;
-}
-
-.article{
-  border: 2px solid darkslateblue;
-  border-style: ridge;
-  width:44.9%;
-  margin: 1%;
-  border-radius: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color:  rgba(71, 61, 139, 0.089)
-}
-
-.article-container{
-  
-}
- .article-container-single{
-  display:flex;
-  flex-direction: row;
-  border: 2px solid darkslateblue;
-  border-style: ridge;
-  widows: 95%;
-  margin: 1%;
-  border-radius: 1.5rem;
-  padding: 1rem;
-    margin-top: 1rem;
-    margin:auto;
- }
-
-.article-header{
-  text-align: center;
-}
-
-.article-page{
-  width: 100%;
-
 }
 
 .button{
@@ -271,6 +320,8 @@ p{
   border-bottom: 1em;
   margin-top:0.3rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
 }
 

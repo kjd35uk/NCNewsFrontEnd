@@ -6,13 +6,16 @@ import Heading from '../Heading'
 class CreateArticle extends React.Component {
   state = {
     title: "",
-    body: ""
+    body: "",
+    message:""
   };
   render() {
+    console.log(this.props, "CA PROPS")
     return (
       <div>
       <Heading/>
-    <form>
+    <form className='article-form'>
+    <span className='article-form-span'>Article title:
       <input
         placeholder="Enter article title"
         value={this.state.title}
@@ -21,19 +24,25 @@ class CreateArticle extends React.Component {
         className="input"
         id='article-title-input'
       />
-      <input
+      </span>
+      <br/>
+      <span className='article-form-span'>Article content:
+      <textarea
         placeholder="Enter article content"
         value={this.state.body}
         onChange={event => this.handleChange(event, "body")}
         type="text"
         className="input"
         id='article-body-input'
-
       />
-      <button onClick={this.handleSubmit} className="button">
-        Create an article
+      </span>
+
+      <br/>
+      <button onClick={this.handleSubmit} className="button" id='article-page-create-button'>
+        Create article here!
       </button>
     </form>
+    {this.state.message && (<p>Thanks for contributing! You can check out your article on the home or topic pages!</p>)}
     </div>)
 
   }
@@ -50,19 +59,31 @@ class CreateArticle extends React.Component {
     console.log(event,'EVENT')
     console.log(this.props.postArticle, 'PROPS')
     event.preventDefault();
-    this.props.postArticle(this.state.title, this.state.body, this.props.match.params.topic)
+    this.postArticle(this.state.title, this.state.body, this.props.match.params.topic)
     this.setState({
       title: "",
-      body: ""
+      body: "",
+      message:""
     })
   }
 
-  // CreateArticle = (title, body) => {
-  //   if (title && body) {
-  //     const newArticle = {'title': title, 'body': body, 'topic': `${this.props.match.params.topic}`
-  //   }
-  //     return newArticle
-  //   }
-  // };
+  postArticle = async (title, body) => {
+    if (title && body) {
+      try {
+        const data = await api.postArticle(
+          title,
+          body,
+          this.props.match.params.topic
+        );
+        const article = {...data.article, created_by: {username:'tickle122'}}
+        console.log(article, 'ARTICLE THAT WAS POSTED')
+        this.setState({ message: 'Success'});
+      } catch (err) {
+        console.log(err, 'ERROR')
+        if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
+        else this.props.history.push("500");
+      }
+    }
+  };
 }
 export default CreateArticle;
