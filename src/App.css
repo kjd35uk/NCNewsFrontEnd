@@ -25,6 +25,53 @@ a:active {
   color: blue;
 }
 
+.App {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Source Code Pro', monospace;
+  min-width:408px;
+}
+
+.App-header {
+  /* background-color: darkslateblue ; */
+  height: 12ch;
+  padding: 1rem;
+  font-size: 1.5em;
+  text-align: left;
+  border-bottom: 1em;
+  margin: auto;
+  background-image: url('./sparkles.jpg');
+  background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    display:flex;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-title {
+  font-size: 8vw;
+  color: white;
+  display:inline-flex;
+  letter-spacing: 7px;
+  font-family: 'Special Elite', cursive;
+  margin: auto;
+}
+
+.article{
+  border: 2px solid darkslateblue;
+  border-style: ridge;
+  width:44.9%;
+  margin: 1%;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color:  rgba(71, 61, 139, 0.089);
+  min-width: 250px;
+}
+
 .article-container{
   display: flex;
   flex-wrap: wrap;
@@ -45,26 +92,6 @@ a:active {
   background-color:  rgba(71, 61, 139, 0.089)
 }
 
-.article-form{
-  /* display: grid; */
-  /* flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around; */
-}
-
-
-
-.article{
-  border: 2px solid darkslateblue;
-  border-style: ridge;
-  width:44.9%;
-  margin: 1%;
-  border-radius: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color:  rgba(71, 61, 139, 0.089)
-}
-
  .article-container-single{
   display:flex;
   flex-direction: column;
@@ -77,10 +104,12 @@ a:active {
     margin-top: 1rem;
     margin:auto;
  }
+
  #article-create-button{
 font-size: 1.5rem;
 margin-bottom: 1rem;
 margin-top: 1rem;
+min-width:200px;
  }
 
  .article-form{
@@ -133,41 +162,6 @@ font-size: large;
 vertical-align: top;
 text-align: left;
 padding:1rem;
-}
-
-.App {
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-family: 'Source Code Pro', monospace;
-  min-width:408px;
-}
-
-.App-header {
-  /* background-color: darkslateblue ; */
-  height: 12ch;
-  padding: 1rem;
-  font-size: 1.5em;
-  text-align: left;
-  border-bottom: 1em;
-  margin: auto;
-  background-image: url('./sparkles.jpg');
-  background-repeat: no-repeat;
-    background-size: 100% 100%;
-    text-align: center;
-    display:flex;
-}
-
-.App-title {
-  font-size: 8vw;
-  color: white;
-  display:inline-flex;
-  letter-spacing: 7px;
-  font-family: 'Special Elite', cursive;
-  margin: auto;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 .button{
@@ -323,11 +317,16 @@ p{
   border-bottom: 1em;
   margin-top:0.3rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
+  min-height:60px;
 }
 
+#topic-header-words{
+  min-height: 100px;
+  min-width: 80px;
+}
 ul{
   list-style-type: none;
 }

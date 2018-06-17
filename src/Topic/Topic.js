@@ -15,7 +15,7 @@ class Topic extends React.Component {
     return (
       <div>
         <Heading />
-        <h1 className="Topic-header">{`You are browsing ${
+        <h1 className="Topic-header" id='topic-header-words'>{`You are browsing ${
           this.props.match.params.topic
         } articles`} 
         <Link to={`/topics/${this.props.match.params.topic}/create_article`}>
@@ -76,7 +76,7 @@ class Topic extends React.Component {
     event.preventDefault();
     this.postArticle(this.state.title, this.state.body)
   }
-  
+
 }
 
 

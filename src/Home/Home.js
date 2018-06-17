@@ -3,6 +3,8 @@ import Heading from "../Heading";
 import ArticleHeader from "../Article/ArticleHeader";
 import { Link } from "react-router-dom";
 import * as api from "../api";
+import Responsive from 'react-responsive-decorator';
+
 
 class Home extends Component {
   state = {
@@ -45,4 +47,4 @@ this.setState({articles})
   }
 }
 
-export default Home;
+export default Responsive(Home);
