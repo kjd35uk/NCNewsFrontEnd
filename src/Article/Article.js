@@ -13,7 +13,7 @@ class Article extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='article-page'>
         <Heading />
         <div className="article-container-single">
           <ArticleHeader article={this.state.article} />

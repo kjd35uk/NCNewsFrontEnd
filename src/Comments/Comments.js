@@ -11,8 +11,10 @@ class Comments extends React.Component {
   render() {
     return (
       <div className="comments-container">
-        <h3> Comments</h3>
+      <div className='comment-add'>
+        <h1 className='comment-heading'> Comments</h1>
         <CommentBox postComment={this.postComment} />
+        </div>
         {this.state.comments.map(comment => (
           <div key={comment._id}>
             <SingleComment
@@ -30,7 +32,7 @@ class Comments extends React.Component {
       const { comments } = await api.fetchCommentsbyArticleId(
         this.props.match.params.article_id
       );
-      comments.sort((a, b) => b.votes - a.votes);
+      comments.sort((a, b) => b.created_at - a.created_at);
       this.setState({ comments });
     } catch (err) {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");

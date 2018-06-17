@@ -3,9 +3,12 @@ import React from 'react';
 
 const Heading = () => {
   return(
+    <div>
     <header className="App-header">
-          <span><img className='logo' src={require('./logo.png')}/><h1 className="App-title">NC News</h1></span>
+          {/*<img className='logo' src={require('./')}/>*/}<h1 className="App-title">Northcoders News</h1>
         </header>
+        <h1 className='heading-bar'> *  </h1>
+        </div>
   )
 }
 

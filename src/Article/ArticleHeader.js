@@ -6,12 +6,11 @@ const ArticleHeader = ({article}) => {
   if(article.created_by) {
   return (
     <div className='article-header' key={article._id}>
-      <h2>{article.title}</h2>
+      <h1>{article.title}</h1>
       <ul>
-      <li>created by: {article.created_by.username}</li>
-      <br/>
-      <li>submitted: {moment(article.created_at).fromNow()}</li>
-      <li>votes: {article.votes}</li>
+      <li>created by {article.created_by.username}</li>
+      <li>{moment(article.created_at).fromNow()}</li>
+      {/* <li>votes: {article.votes}</li> */}
 
       </ul>
       </div>
