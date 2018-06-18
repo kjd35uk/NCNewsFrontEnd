@@ -3,18 +3,20 @@ import Heading from "../Heading";
 import ArticleHeader from "../Article/ArticleHeader";
 import { Link } from "react-router-dom";
 import * as api from "../api";
-import Responsive from 'react-responsive-decorator';
-
+import Users from '../Users/Users';
 
 class Home extends Component {
   state = {
-    articles: []
+    articles: [],
+    users:[]
   };
 
   componentDidMount = async () => {
     try {
       const { articles } = await api.fetchArticles();
-      this.setState({ articles });
+      const { users } = await api.fetchUsers()
+      this.setState({ articles, users });
+
     } catch (err) {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
       else this.props.history.push("500");
@@ -23,10 +25,10 @@ class Home extends Component {
 
   render() {
     const articles = [...this.state.articles];
-
     return (
       <div className="App">
         <Heading />
+        <Users getArticlesByUser={this.getArticlesByUser} users={this.state.users}/>
         <div className="article-container">
           {articles.sort((a, b) => b.votes - a.votes).map(article => (
             <div className="article" key={article._id}>
@@ -41,10 +43,13 @@ class Home extends Component {
   }
 
 getArticlesByUser = (username) => {
+  console.log('working on home')
+  console.log(username, 'USERNAME')
 const articles = [...this.state.articles]
-articles.filter(article => article.created_by.username === username)
-this.setState({articles})
+const newArticles = articles.filter(article => article.created_by.username === username)
+console.log(articles, 'ARTICLES')
+this.setState({articles: newArticles})
   }
 }
 
-export default Responsive(Home);
+export default Home;

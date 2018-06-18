@@ -13,6 +13,11 @@ export const fetchArticles = async query => {
   return data;
 }
 
+export const fetchUsers = async query => {
+  const {data} = await axios.get(`${url}/users`)
+  return data;
+}
+
 export const vote = async (id, query) => {
   const{data} = await axios.put(`${url}/articles/${id}?vote=${query}`)
   return data;
