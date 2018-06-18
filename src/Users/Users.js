@@ -1,6 +1,9 @@
 import React from "react";
 
 class Users extends React.Component {
+  state = {
+    user: ''
+  }
 
   render() {
     const options = this.props.users.map(user => user.username);
@@ -8,9 +11,9 @@ class Users extends React.Component {
     return (
       <div className="searchbox-container">
       <select className = 'select-button' onChange={this.handleChange}>
-        <option font='Amatic SC'value="">Select user</option>
+        <option className='option' value="">Select user</option>
         {options.map((user, i) => (
-          <option key={i} font='Amatic SC' value={user}>
+          <option className='option' key={i} value={user}>
             {user}
           </option>
         ))}
@@ -18,9 +21,12 @@ class Users extends React.Component {
     </div>
     );
   }
+
   handleChange = ({ target: { value } }) => {
     this.props.getArticlesByUser(value)
+    this.setState({user: ''})
   };
+
 }
 
 export default Users;

@@ -46,7 +46,8 @@ The project is now ready to run. You can see it directly in the browser by openi
 | Route                         |                                              |
 | -------------                 |   -------------                              |
 | /                             | The homepage displays all articles (headers  |
-|                               |  only) in order of popularity.               |
+|                               |  only) in order of popularity. You can also  |
+|                               |  use the dropdown to filter articles by user.|
 |                               |                                              |
 | /topics/:topic                | Clicking on a topic button displays all the  |
 |                               |  articles (headers only) for                 |

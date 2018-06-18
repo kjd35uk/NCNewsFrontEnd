@@ -299,8 +299,27 @@ margin-bottom:2rem;
   outline: none;
 }
 
+option {
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Source Code Pro', monospace; 
+  font-size: medium;
+}
+
+
 p{
   font-size: larger;
+}
+ .searchbox-container {
+text-align: left;
+ }
+
+.select-button {
+  height: 3rem;
+  width: 10rem;
+  font-size: large;
+  background-color: darkslateblue;
+  color: white;
+  margin-bottom: 1rem;
 }
 
 .topic-button-container{

@@ -23,6 +23,18 @@ class Home extends Component {
     }
   };
 
+  componentDidUpdate = async prevProps => {
+    if (prevProps !== this.props) {
+      try {
+        const { articles } = await api.fetchArticles();
+        this.setState({ articles });
+      } catch (err) {
+        if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
+        else this.props.history.push("500");
+      }
+    }
+  };
+ 
   render() {
     const articles = [...this.state.articles];
     return (
@@ -42,14 +54,15 @@ class Home extends Component {
     );
   }
 
-getArticlesByUser = (username) => {
-  console.log('working on home')
-  console.log(username, 'USERNAME')
-const articles = [...this.state.articles]
-const newArticles = articles.filter(article => article.created_by.username === username)
-console.log(articles, 'ARTICLES')
-this.setState({articles: newArticles})
+getArticlesByUser = async (username) => {
+const { articles } = await api.fetchArticles();
+// const articles = [...this.state.articles]
+if(username) {
+  const newArticles = articles.filter(article => article.created_by.username === username)
+  this.setState({articles: newArticles})
   }
+  else this.setState({articles})
+}
 }
 
 export default Home;
