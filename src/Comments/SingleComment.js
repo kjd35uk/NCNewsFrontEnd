@@ -15,7 +15,7 @@ const {comment} = this.state
     <div className='comment-container'>
     <div className='comment-body'>
       <p>{comment.body}</p>
-      <p>votes: {comment.votes}</p>
+      <p>{comment.votes} likes</p>
       <p>created by: {comment.created_by.username}</p>
       <p>submitted: {moment(comment.created_at).fromNow()}</p>
       </div>

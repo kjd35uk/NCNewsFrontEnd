@@ -135,22 +135,22 @@ min-width:200px;
 }
 
 #article-page-create-button{
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  max-width:21%;
+font-size: 1.5rem;
+margin-bottom: 1rem;
+margin-top: 1rem;
+max-width:21%;
 margin-right: auto;
 margin-left: auto;
 }
 
 #article-title-input{
-  min-width: 60%;
-  min-height: 2rem;
-  text-align: center;
-  font-size: large;
-  margin-left: 1.8rem;
-  text-align: left;
-  padding:1rem;
+min-width: 60%;
+min-height: 2rem;
+text-align: center;
+font-size: large;
+margin-left: 1.8rem;
+text-align: left;
+padding:1rem;
 
 }
 
@@ -165,15 +165,15 @@ padding:1rem;
 }
 
 .button{
-  color:darkslateblue;
-  font-size: 1rem;
-  border: 2px solid darkslateblue;
-  border-style: ridge;
-  border-radius: 3rem;
-  padding: 0.5rem;
-  outline: none;
-   font-family: 'Josefin Sans', sans-serif;
-  font-family: 'Source Code Pro', monospace;
+color:darkslateblue;
+font-size: 1rem;
+border: 2px solid darkslateblue;
+border-style: ridge;
+border-radius: 3rem;
+padding: 0.5rem;
+outline: none;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Source Code Pro', monospace;
 }
 
 .button-image{
@@ -193,6 +193,7 @@ left:34%;
 display: flex;
 flex-direction: column;
 }
+
 #comment-add-button{
   background-color: darkslateblue;
   color: white;
@@ -350,4 +351,154 @@ display:flex;
 flex-direction: column;
 flex-wrap: no-wrap;
 justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .App-header {
+    /* background-color: darkslateblue ; */
+    height: 18ch;
+    padding: 0.5rem;
+    font-size: 0.5em;
+    text-align: left;
+    border-bottom: 0.5em;
+    margin: auto;
+    background-image: url('./sparkles.jpg');
+    background-repeat: no-repeat;
+      background-size: 100% 100%;
+      text-align: center;
+      display:flex;
+  }
+
+  .article {
+    border: 2px solid darkslateblue;
+    border-style: ridge;
+    width:44.9%;
+    margin: 1%;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color:  rgba(71, 61, 139, 0.089);
+    min-width: 250px;
+    text-align: center;
+  }
+
+  .article-container-single{
+    display:flex;
+    flex-direction: column;
+    border: 2px solid darkslateblue;
+    border-style: ridge;
+    widows: 95%;
+    margin: 1%;
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+      margin-top: 1rem;
+      margin:auto;
+   }
+
+  #article-create-button{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    min-width:200px;
+     }
+
+  .article-header {
+    text-align: center;
+    font-size: x-small;
+  }
+
+  body {
+      background-color: lightblue;
+  }
+
+  .button{
+    color:darkslateblue;
+    font-size: 0.8rem;
+    border: 2px solid darkslateblue;
+    border-style: ridge;
+    border-radius: 3rem;
+    padding: 0.3rem;
+    outline: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+  }
+  
+  #comment-add-button{
+    background-color: darkslateblue;
+    color: white;
+    margin-left: 1rem;
+    font-size: 1rem;
+    padding:0.4rem;
+  }
+
+  #comment-add-input{
+    font-size: 1rem;
+  }
+
+  .comment-heading{
+    margin:auto;
+    padding-bottom:1.5rem;
+    float:left;
+    font-size:1.5rem;
+  }
+
+  .heading-bar {
+    background-color: darkslateblue;
+    margin:0;
+    height:1rem;
+    color: darkslateblue;
+    margin-bottom:2rem;
+    font-size: small;
+    }
+
+  .nav {
+    font-size: 1.0em;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Source Code Pro', monospace;  
+    background-color: rgb(34, 114, 110);
+    border: none;
+    padding: 0.1em;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    max-width: 100%;
+  
+  }
+
+  #nav-button{
+    margin-right:0.5rem;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    outline: none;
+  }
+
+  .Topic-header{
+    background-color: darkslateblue;
+    height: 1rem;
+    padding: 1rem;
+    color: white;
+    text-align: left;
+    border-bottom: 0.7em;
+    margin-top:0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height:60px;
+    font-size: 1.3rem;
+  }
+  ul li{
+    font-size:16px;
+    margin-right:3rem;
+   }
+   ul{
+     text-align: center;
+   }
+   #vote-button{
+    max-width:4rem;
+  }
 }

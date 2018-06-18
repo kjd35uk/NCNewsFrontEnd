@@ -10,8 +10,7 @@ const ArticleHeader = ({article}) => {
       <ul>
       <li>created by {article.created_by.username}</li>
       <li>{moment(article.created_at).fromNow()}</li>
-      <li>votes: {article.votes}</li>
-
+      <li>{article.votes} likes</li>
       </ul>
       </div>
   )
