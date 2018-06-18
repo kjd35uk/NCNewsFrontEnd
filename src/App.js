@@ -34,6 +34,8 @@ render() {
   </nav>
   
   <Route exact path="/" component={Home}/>
+  <Route exact path="/500" component={Error500}/>
+
 
   <Switch>
   <Route exact path="/articles/404" component={Error404} />
