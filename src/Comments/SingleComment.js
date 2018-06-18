@@ -15,9 +15,11 @@ const {comment} = this.state
     <div className='comment-container'>
     <div className='comment-body'>
       <p>{comment.body}</p>
-      <p>{comment.votes} likes</p>
-      <p>created by: {comment.created_by.username}</p>
-      <p>submitted: {moment(comment.created_at).fromNow()}</p>
+      <ul className='comment-metadata'>
+      <li>{comment.votes} likes</li>
+      <li>created by {comment.created_by.username}</li>
+      <li>submitted {moment(comment.created_at).fromNow()}</li>
+      </ul>
       </div>
       <div className='comment-buttons-container'>
     <Vote className='comment-vote' {...this.props} vote={this.vote} id={comment._id}/>
