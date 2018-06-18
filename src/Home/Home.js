@@ -40,7 +40,7 @@ class Home extends Component {
     return (
       <div className="App">
         <Heading />
-        <Users getArticlesByUser={this.getArticlesByUser} users={this.state.users}/>
+        <Users fetchArticlesbyUserId={this.fetchArticlesbyUserId} users={this.state.users}/>
         <div className="article-container">
           {articles.sort((a, b) => b.votes - a.votes).map(article => (
             <div className="article" key={article._id}>
@@ -54,15 +54,18 @@ class Home extends Component {
     );
   }
 
-getArticlesByUser = async (username) => {
-const { articles } = await api.fetchArticles();
-// const articles = [...this.state.articles]
-if(username) {
-  const newArticles = articles.filter(article => article.created_by.username === username)
-  this.setState({articles: newArticles})
+  fetchArticlesbyUserId = async (username) => {
+    const user = [...this.state.users].find(user => user.username === username)
+    const id = user._id
+  try {
+    const { articles } = await api.fetchArticlesbyUserId(id);
+    this.setState({ articles });
+
+  } catch (err) {
+    if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
+    else this.props.history.push("500");
   }
-  else this.setState({articles})
-}
+};
 }
 
 export default Home;

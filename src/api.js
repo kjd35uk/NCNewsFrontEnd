@@ -8,6 +8,11 @@ export const fetchArticlebyId = async (id) => {
   return data;
 }
 
+export const fetchArticlesbyUserId = async (id) => {
+  const {data} = await axios.get(`${url}/users/${id}/articles`)
+  return data;
+}
+
 export const fetchArticles = async query => {
   const {data} = await axios.get(`${url}/articles`)
   return data;
