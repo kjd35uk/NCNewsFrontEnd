@@ -1,9 +1,7 @@
 import React from "react";
 
 class Users extends React.Component {
-  state = {
-    user: ''
-  }
+ 
 
   render() {
     const options = this.props.users.map(user => user.username);
@@ -24,7 +22,6 @@ class Users extends React.Component {
 
   handleChange = ({ target: { value } }) => {
     this.props.getArticlesByUser(value)
-    this.setState({user: ''})
   };
 
 }
