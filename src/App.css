@@ -112,6 +112,12 @@ margin-top: 1rem;
 min-width:200px;
  }
 
+ #article-create-button:hover{
+  background-image:none;
+  background-color:#ff00ff;
+  color:white;
+}
+
  .article-form{
    display:grid;
    margin-left: auto;
@@ -201,7 +207,10 @@ flex-direction: column;
   margin-left: 1rem;
   font-size: 1.5rem;
 }
-
+#comment-add-button:hover{
+  background-image:none;
+  background-color:#ff00ff;
+}
 #comment-add-input{
 font-size: 1.5rem;
 }
@@ -262,7 +271,8 @@ margin-bottom:2rem;
   outline: none;
 }
 
-.home-button-container{
+#home-button:hover {
+  color: hotpink;
 }
 
 .input{
@@ -298,7 +308,9 @@ margin-bottom:2rem;
   border-radius: 1rem;
   outline: none;
 }
-
+#nav-button:hover {
+  color: hotpink;
+}
 option {
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'Source Code Pro', monospace; 
@@ -366,6 +378,11 @@ align-items: center;
 #vote-button{
   max-width:3rem;
 }
+#vote-button:hover{
+    background-image:none;
+    background-color:#ff00ff;
+}
+
 .vote-container{
 display:flex;
 flex-direction: column;
