@@ -40,7 +40,7 @@ a:active {
   text-align: left;
   border-bottom: 1em;
   margin: auto;
-  background-image: url('./sparkles.jpg');
+  background-image: url('./images/sparkles.jpg');
   background-repeat: no-repeat;
     background-size: 100% 100%;
     text-align: center;
@@ -400,7 +400,7 @@ justify-content: space-evenly;
     text-align: left;
     border-bottom: 0.5em;
     margin: auto;
-    background-image: url('./sparkles.jpg');
+    background-image: url('./images/sparkles.jpg');
     background-repeat: no-repeat;
       background-size: 100% 100%;
       text-align: center;

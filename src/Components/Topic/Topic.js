@@ -1,27 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ArticleHeader from "../Article/ArticleHeader";
-import * as api from "../api";
+import * as api from "../../api";
 import Heading from "../Heading";
 
 class Topic extends React.Component {
   state = {
     articles: [],
-    title:'',
-    body: ''
+    title: "",
+    body: ""
   };
   render() {
-
     return (
       <div>
         <Heading />
-        <h1 className="Topic-header" id='topic-header-words'>{`You are browsing ${
-          this.props.match.params.topic
-        } articles`} 
-        <Link to={`/topics/${this.props.match.params.topic}/create_article`}>
-                <button className='button' id='article-create-button'>CREATE AN ARTICLE</button>
-              </Link>
-              </h1>
+        <h1 className="Topic-header" id="topic-header-words">
+          {`You are browsing ${this.props.match.params.topic} articles`}
+          <Link to={`/topics/${this.props.match.params.topic}/create_article`}>
+            <button className="button" id="article-create-button">
+              CREATE AN ARTICLE
+            </button>
+          </Link>
+        </h1>
         <div className="article-container">
           {this.state.articles.map(article => (
             <div className="article" key={article._id}>
@@ -34,12 +34,12 @@ class Topic extends React.Component {
       </div>
     );
   }
-  
+
   componentDidMount = async () => {
     try {
       const { articles } = await api.fetchArticlesbyTopic(
         this.props.match.params.topic
-      )
+      );
       articles.sort((a, b) => b.votes - a.votes);
       this.setState({ articles });
     } catch (err) {
@@ -67,17 +67,15 @@ class Topic extends React.Component {
   handleChange = (event, targetState) => {
     event.preventDefault();
     const newVal = event.target.value;
-    this.setState ({
+    this.setState({
       [targetState]: newVal
-    })
-  }
+    });
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
-    this.postArticle(this.state.title, this.state.body)
-  }
-
+    this.postArticle(this.state.title, this.state.body);
+  };
 }
-
 
 export default Topic;

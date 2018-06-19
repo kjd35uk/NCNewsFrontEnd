@@ -3,8 +3,8 @@ import Heading from "../Heading";
 import ArticleDisplay from "./ArticleDisplay";
 import Comments from "../Comments/Comments";
 import ArticleHeader from "./ArticleHeader";
-import Vote from "../Vote";
-import * as api from "../api";
+import Vote from "../../Vote";
+import * as api from "../../api";
 
 class Article extends React.Component {
   state = {

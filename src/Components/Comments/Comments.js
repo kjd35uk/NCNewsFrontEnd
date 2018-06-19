@@ -1,6 +1,6 @@
 import React from "react";
 import SingleComment from "./SingleComment";
-import * as api from "../api";
+import * as api from "../../api";
 import CommentBox from "./CommentBox";
 
 class Comments extends React.Component {

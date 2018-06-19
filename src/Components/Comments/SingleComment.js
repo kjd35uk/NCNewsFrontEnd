@@ -1,6 +1,6 @@
 import React from 'react';
-import Vote from '../Vote';
-import * as api from '../api';
+import Vote from '../../Vote';
+import * as api from "../../api";
 import moment from 'moment';
 
 

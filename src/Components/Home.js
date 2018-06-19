@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Heading from "../Heading";
-import ArticleHeader from "../Article/ArticleHeader";
+import Heading from "../Components/Heading";
+import ArticleHeader from "./Article/ArticleHeader";
 import { Link } from "react-router-dom";
 import * as api from "../api";
-import Users from '../Users/Users';
+import Users from '../Components/Users';
 
 class Home extends Component {
   state = {
