@@ -1,6 +1,8 @@
 **Northcoders News --- https://kirstie-nc-news.herokuapp.com/**
 Northcoders News is a social news aggregation, web content rating, and discussion website. In a similar way to Reddit, Northcoders News has articles which are organised into topics. Users have the opportunity to rate articles by using a voting system - articles can be up or down voted using the API. It is also possible to add comments about an article or add a new article to an existing topic. As with articles, comments can  be up or down voted. A user may add comments to an article or remove any previously added comments, although it is not possible to delete comments made by other users. The front-end for Northcoders News has been developed using React, React Router and axios. 
 
+This React router project uses axios to integrate with an Express backend(https://northcoders-news-kirstiecodes.herokuapp.com/)
+
 **Getting Started**
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
@@ -41,26 +43,6 @@ To make sure that all dependencies are installed, including webpack, please ente
 $ npm install
 
 The project is now ready to run. You can see it directly in the browser by opening http://localhost:3000/.
-
-**Routes from https://kirstie-nc-news.herokuapp.com/**
-| Route                         |                                              |
-| -------------                 |   -------------                              |
-| /                             | The homepage displays all articles (headers  |
-|                               |  only) in order of popularity. You can also  |
-|                               |  use the dropdown to filter articles by user.|
-|                               |                                              |
-| /topics/:topic                | Clicking on a topic button displays all the  |
-|                               |  articles (headers only) for                 |
-|                               |  that topic in order of popularity. You      |
-|                               |  can also create a new article and post it to|
-|                               |  the topic.                                  |
-|                               |                                              |
-| /articles/:article_id         | Clicking on any article header will display  |
-|                               |  the full article. On this page, you can vote|
-|                               |  on the article, add a comment and vote on   |
-|                               |  existing comments.                          |
-|                               |                                              |
-
 
 **Deployment**
 If you would like to run the production deployed app without installing the software onto your computer, open a browser window and enter the following url:
