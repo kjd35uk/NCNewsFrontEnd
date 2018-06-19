@@ -25,6 +25,16 @@ class Article extends React.Component {
     );
   }
   componentDidMount = async () => {
+   this.getArticle()
+  };
+
+  componentDidUpdate = async prevProps => {
+    if (prevProps.article_id !== this.props.article_id) {
+     this.getArticle()
+  };
+}
+
+  getArticle = async () => {
     try {
       const { article } = await api.fetchArticlebyId(
         this.props.match.params.article_id
@@ -34,21 +44,7 @@ class Article extends React.Component {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
       else this.props.history.push("500");
     }
-  };
-
-  componentDidUpdate = async prevProps => {
-    if (prevProps.article_id !== this.props.article_id) {
-      try {
-        const { article } = await api.fetchArticlebyId(
-          this.props.match.params.article_id
-        );
-        this.setState({ article });
-      } catch (err) {
-        if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
-        else this.props.history.push("500");
-      }
-    }
-  };
+  }
 
   vote = async query => {
     const { article } = this.state;

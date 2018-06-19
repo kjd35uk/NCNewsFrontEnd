@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ArticleHeader from "../Article/ArticleHeader";
 import * as api from "../../api";
 import Heading from "../Heading";
+import Loading from '../Loading';
 
 class Topic extends React.Component {
   state = {
@@ -11,6 +12,7 @@ class Topic extends React.Component {
     body: ""
   };
   render() {
+    if(this.state.articles.length > 0) {
     return (
       <div>
         <Heading />
@@ -34,8 +36,20 @@ class Topic extends React.Component {
       </div>
     );
   }
+  return <Loading />;
+}
 
   componentDidMount = async () => {
+    this.getArticles();
+  };
+
+  componentDidUpdate = async prevProps => {
+    if (prevProps !== this.props) {
+    this.getArticles();
+    }
+  };
+
+  getArticles = async () => {
     try {
       const { articles } = await api.fetchArticlesbyTopic(
         this.props.match.params.topic
@@ -46,23 +60,7 @@ class Topic extends React.Component {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
       else this.props.history.push("500");
     }
-  };
-
-  componentDidUpdate = async prevProps => {
-    if (prevProps !== this.props) {
-      try {
-        const { articles } = await api.fetchArticlesbyTopic(
-          this.props.match.params.topic
-        );
-        articles.sort((a, b) => b.votes - a.votes);
-
-        this.setState({ articles });
-      } catch (err) {
-        if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
-        else this.props.history.push("500");
-      }
-    }
-  };
+  }
 
   handleChange = (event, targetState) => {
     event.preventDefault();

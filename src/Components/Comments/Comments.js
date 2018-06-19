@@ -28,6 +28,16 @@ class Comments extends React.Component {
   }
 
   componentDidMount = async () => {
+    this.getComments();
+  };
+
+  componentDidUpdate = async prevProps => {
+    if (prevProps.match.params.article_id !== this.props.match.params.article_id) {
+      this.getComments();
+    }
+  };
+
+  getComments = async () => {
     try {
       const { comments } = await api.fetchCommentsbyArticleId(
         this.props.match.params.article_id
@@ -37,25 +47,8 @@ class Comments extends React.Component {
     } catch (err) {
       if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
       else this.props.history.push("500");
-    }
-  };
-
-  componentDidUpdate = async prevProps => {
-    if (
-      prevProps.match.params.article_id !== this.props.match.params.article_id
-    ) {
-      try {
-        const { comments } = await api.fetchCommentsbyArticleId(
-          this.props.match.params.article_id
-        );
-        this.setState({ comments });
-      } catch (err) {
-        if (err.response.status === 404 || err.response.status === 400) this.props.history.push("404");
-        else this.props.history.push("500");
-      }
-    }
-  };
-
+  }
+}
   postComment = async text => {
     if (text) {
       try {

@@ -86,6 +86,7 @@ class CreateArticle extends React.Component {
           body,
           this.props.match.params.topic
         );
+        // eslint-disable-next-line
         const article = {
           ...data.article,
           created_by: { username: "tickle122" }

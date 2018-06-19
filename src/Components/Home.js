@@ -4,6 +4,8 @@ import ArticleHeader from "./Article/ArticleHeader";
 import { Link } from "react-router-dom";
 import * as api from "../api";
 import Users from '../Components/Users';
+import Loading from './Loading';
+
 
 class Home extends Component {
   state = {
@@ -37,6 +39,7 @@ class Home extends Component {
  
   render() {
     const articles = [...this.state.articles];
+    if(this.state.articles.length > 0) {
     return (
       <div className="App">
         <Heading />
@@ -53,6 +56,8 @@ class Home extends Component {
       </div>
     );
   }
+  return <Loading />;
+}
 
   fetchArticlesbyUserId = async (username) => {
     const user = [...this.state.users].find(user => user.username === username)

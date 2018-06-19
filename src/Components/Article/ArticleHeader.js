@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Loading from '../Loading'
 
 const ArticleHeader = ({ article }) => {
   if (article.created_by) {
@@ -14,7 +15,7 @@ const ArticleHeader = ({ article }) => {
       </div>
     );
   }
-  return <p>Loading</p>;
+  return <Loading />;
 };
 
 export default ArticleHeader;
